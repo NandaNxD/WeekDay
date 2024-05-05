@@ -8,6 +8,7 @@ const JobCard = (jd) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [matchScore, setMatchScore] = useState(0);
   const [isMatchScoreVisible, setIsMatchScoreVisible] = useState(false);
+  const [showVerified,setShowVerified]=useState(false);
   const [jobPostDate, setJobPostDate] = useState(1);
 
   const {
@@ -48,6 +49,7 @@ const JobCard = (jd) => {
     setMatchScore(Math.floor(Math.random() * 100));
     setIsMatchScoreVisible(Math.random() < 0.5);
     setJobPostDate(Math.floor(Math.random() * 5) + 1);
+    setShowVerified(Math.random() < 0.5);
   }, []);
 
   return (
@@ -100,7 +102,7 @@ const JobCard = (jd) => {
             <span>❔</span>
           </Tooltip>
         )}
-        {Math.random() < 0.5 && (
+        {showVerified && (
           <Tooltip title="Offered Salary Range" placement="top">
             <span style={{ marginLeft: "0.5rem" }}>✅</span>
           </Tooltip>

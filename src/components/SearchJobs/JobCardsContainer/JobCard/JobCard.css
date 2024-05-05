@@ -83,6 +83,7 @@
 .location-text{
     display: block;
     font-size: small;
+    font-weight: bold;
 }
 
 .estimated-salary{

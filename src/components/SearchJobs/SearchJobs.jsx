@@ -10,7 +10,7 @@ const SearchJobs = () => {
     <>
       <div>Search Jobs</div>
       <SearchFilters/>
-      <JobCardsContainer/>
+      <JobCardsContainer jdList={data}/>
     </>
   )
 }

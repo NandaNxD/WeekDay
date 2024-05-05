@@ -1,0 +1,142 @@
+.job-card{
+    display: flex;
+    width: 25%;
+    min-width: 300px;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.posted-date-chip{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.job-card-header{
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.job-card-image{
+    border-radius: 30%;
+    width: 2.5rem;
+}
+
+.location-text::first-letter{
+    text-transform: uppercase;
+}
+
+.company-name-text{
+    display: block;
+    font-size: large;
+    color: #8b8b8b;
+    text-decoration:  none;
+}
+
+.company-name-text:hover{
+    text-decoration: underline;
+}
+
+.jobrole-text{
+    display: block;
+    text-transform: uppercase;
+}
+
+.first-upper::first-letter{
+    text-transform: uppercase;
+}
+
+.location-text{
+    display: block;
+    font-size: small;
+}
+
+.estimated-salary{
+    font-weight: 200;
+    margin-top: 0.5rem;
+    color: #514d4d;
+}
+
+
+.job-header-text-section{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.show-more{
+    color: rgb(73, 67, 218);
+    cursor: pointer;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.job-card-description{
+    margin-top: 1rem;
+    position: relative;
+}
+
+.job-description{
+    height: 300px;
+    overflow:hidden;
+    mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+
+
+.about-card-text{
+    font-weight: bold;
+    font-size:medium;
+    margin-bottom: 0.4rem;
+}
+
+.experience-section{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.experience-section-text{
+    color:#8b8b8b;
+    display: block;
+}
+
+.experience-years-number{
+    font-weight: 100;
+}
+
+.easy-apply-button{
+    width: 100%;
+    padding: 0.6rem 0rem;
+    font-size: large;
+    color:black;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(85, 239, 196);
+    text-decoration: none;
+}
+
+.referral-button{
+    width: 100%;
+    gap: 4px;
+    padding: 0.3rem 0rem;
+    margin-top: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: rgb(73, 67, 218);
+    border-radius: 0.4rem;
+    color:white
+}

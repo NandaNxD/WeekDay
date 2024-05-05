@@ -1,11 +1,17 @@
+// import JobCard from '../JobCard/JobCard';
+import JobCard from './JobCard/JobCard';
+import './JobCardsContainer.css'
 
+const JobCardsContainer = ({jdList}) => {
+  console.log(jdList);
 
-const JobCardsContainer = () => {
   return (
-    <div>
-        <div>
-            
-        </div>
+    <div className='job-cards-container'>
+        {
+          jdList.map((jd)=>{
+            return <JobCard key={jd.jdUid} jd={jd}/>
+          })
+        }
     </div>
   )
 }

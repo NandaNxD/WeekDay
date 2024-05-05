@@ -36,10 +36,10 @@ const useSearchJobs=()=>{
             setJobResponse({
                 loading:false,
                 error:false,
-                data:result
+                data:result.jdList
             })
 
-            console.log(result)
+            // console.log(result)
         })
         .catch((error) => {
            console.error(error)

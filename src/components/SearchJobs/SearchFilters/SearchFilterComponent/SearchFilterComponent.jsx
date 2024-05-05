@@ -33,7 +33,7 @@ export default function SearchFilterComponent({placeholder,data,groupByKey}) {
           />
         ))
       }
-      style={{ width: 300 }}
+      style={{ width: '20%' }}
       renderInput={(params) => (
         <TextField {...params} label={placeholder} placeholder={placeholder} />
       )}

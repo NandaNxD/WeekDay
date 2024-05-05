@@ -97,9 +97,12 @@ const JobCard = (jd) => {
         }
         {
           Math.random()<0.5 && (
-            <span style={{marginLeft:'0.5rem'}}>
-            ✅
-            </span>
+            <Tooltip title='Offered Salary Range'>
+              <span style={{marginLeft:'0.5rem'}}>
+              ✅
+              </span>
+            </Tooltip>
+            
           )
         }
       

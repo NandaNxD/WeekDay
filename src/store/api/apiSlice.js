@@ -17,8 +17,10 @@ export const apiSlice=createApi({
         },
         // Always merge incoming data to the cache entry
         merge: (currentCache, newItems) => {
-            console.log(currentCache.jdList);
-            currentCache.jdList.push(...newItems.jdList);
+            if(currentCache.jdList.length>200){
+                currentCache.jdList.splice(0,1)
+            }
+            currentCache.jdList=[...currentCache.jdList,...newItems.jdList];
         },
         // Refetch when the page arg changes
         forceRefetch({ currentArg, previousArg }) {

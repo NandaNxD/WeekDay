@@ -28,15 +28,9 @@ const JobCardsContainer = () => {
   }
 
   const fetchMore=()=>{
-    setBody((prev)=>{
-      return {offset:prev.items+10,items:10}
-    });
-  }
+    console.log('fetching more')
+    setBody({items:(body.items),offset:(body.offset+10)});
 
-  const refresh=()=>{
-    setBody((prev)=>{
-      return {offset:prev.items+10,items:10}
-    });
   }
 
   const jdList = data.jdList;
@@ -44,7 +38,7 @@ const JobCardsContainer = () => {
   return (
     <div style={{height:'90vh'}}>
       <InfiniteScroll
-        dataLength={data.jdList.length} //This is important field to render the next data
+        dataLength={jdList.length}
         next={fetchMore}
         hasMore={true}
         loader={<Shimmer></Shimmer>}

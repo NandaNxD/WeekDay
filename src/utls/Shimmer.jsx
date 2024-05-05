@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Shimmer() {
 
-  const shimmerList=[1,2,3,4,5,6]
+  const shimmerList=[1,2,3,4]
 
   return (
     <div style={{display:'flex',flexWrap:'wrap',gap:'3rem',rowGap:'100px',marginTop:'1rem',justifyContent:'center'}}>
@@ -22,8 +22,8 @@ export default function Shimmer() {
                 </div>
             </div>
            
-            <Skeleton variant="rounded" width={410} height={100} />
-            <Skeleton variant="rounded" width={410} height={50} />
+            <Skeleton variant="rounded" width={310} height={100} />
+            <Skeleton variant="rounded" width={310} height={50} />
           </Stack>
         );
       })}

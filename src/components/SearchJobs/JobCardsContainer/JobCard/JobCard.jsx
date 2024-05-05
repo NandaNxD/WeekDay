@@ -88,7 +88,7 @@ const JobCard = (jd) => {
       <div className="estimated-salary">
         Estimated Salary:
         {minJdSalary ? (
-          <span> ₹{minJdSalary} LPA</span>
+          <span> {minJdSalary} {salaryCurrencyCode}</span>
         ) : (
           <Tooltip title="No Data Available" placement="top">
             <span>❔</span>
@@ -96,7 +96,7 @@ const JobCard = (jd) => {
         )}
         {minJdSalary || maxJdSalary ? " - " : ""}
         {maxJdSalary ? (
-          <span> ₹{maxJdSalary} LPA</span>
+          <span> {maxJdSalary} {salaryCurrencyCode}</span>
         ) : (
           <Tooltip title="No Data Available" placement="top">
             <span>❔</span>

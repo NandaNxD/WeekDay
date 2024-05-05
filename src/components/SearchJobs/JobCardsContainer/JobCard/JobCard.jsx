@@ -53,7 +53,7 @@ const JobCard = (jd) => {
   return (
     <div className="job-card" key={jdUid}>
       <div className="posted-date-chip">
-        {`⌛ Posted ${jobPostDate} day Ago`}
+        {`⌛ Posted ${jobPostDate} days ago`}
       </div>
 
       {isMatchScoreVisible && (

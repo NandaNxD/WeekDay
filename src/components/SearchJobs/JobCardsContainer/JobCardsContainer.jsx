@@ -1,30 +1,67 @@
-import { useGetAllJobsQuery } from '../../../store/api/apiSlice';
-import JobCard from './JobCard/JobCard';
-import './JobCardsContainer.css'
+import { useEffect, useState } from "react";
+import { useGetAllJobsQuery } from "../../../store/api/apiSlice";
+import JobCard from "./JobCard/JobCard";
+import InfiniteScroll from "react-infinite-scroll-component";
+import "./JobCardsContainer.css";
+import Shimmer from "../../../utls/Shimmer";
 
 const JobCardsContainer = () => {
-  const {data,isError,isLoading}=useGetAllJobsQuery();
-  
-  if(isLoading){
-    return <h1>Loading...</h1>
+
+  const [body, setBody] = useState({
+    items: 10,
+    offset: 0,
+  });
+
+  const { data, isError, isLoading } = useGetAllJobsQuery(body);
+
+  useEffect(()=>{
+    console.log(data);
+  },[data])
+
+
+  if (isLoading) {
+    return <Shimmer/>;
   }
 
-  if(isError){
-    return <h2>Error</h2>
+  if (isError) {
+    return <h2>Error</h2>;
   }
 
-  const jdList=data.jdList
-  console.log(jdList);
+  const fetchMore=()=>{
+    setBody((prev)=>{
+      return {offset:prev.items+10,items:10}
+    });
+  }
+
+  const refresh=()=>{
+    setBody((prev)=>{
+      return {offset:prev.items+10,items:10}
+    });
+  }
+
+  const jdList = data.jdList;
 
   return (
-    <div className='job-cards-container'>
-        {
-          jdList.map((jd)=>{
-            return <JobCard key={jd.jdUid} jd={jd}/>
-          })
+    <div style={{height:'90vh'}}>
+      <InfiniteScroll
+        dataLength={data.jdList.length} //This is important field to render the next data
+        next={fetchMore}
+        hasMore={true}
+        loader={<Shimmer></Shimmer>}
+        endMessage={
+          <p style={{ textAlign: "center" }}>
+            <b>Yay! You have seen it all</b>
+          </p>
         }
+      >
+        <div className="job-cards-container">
+          {jdList.map((jd) => {
+            return <JobCard key={jd.jdUid} jd={jd} />;
+          })}
+        </div>
+      </InfiniteScroll>
     </div>
-  )
-}
+  );
+};
 
-export default JobCardsContainer
+export default JobCardsContainer;

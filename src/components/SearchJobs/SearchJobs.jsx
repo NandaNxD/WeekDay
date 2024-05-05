@@ -1,16 +1,16 @@
+import InfiniteScroll from "react-infinite-scroll-component";
 import JobCardsContainer from "./JobCardsContainer/JobCardsContainer";
 import SearchFilters from "./SearchFilters/SearchFilters";
-import './SearchJobs.css'
+import "./SearchJobs.css";
 
 const SearchJobs = () => {
-  
   return (
     <div className="search-jobs">
       <h1>Search Jobs</h1>
-      <SearchFilters/>
+      <SearchFilters />
       <JobCardsContainer />
     </div>
-  )
-}
+  );
+};
 
-export default SearchJobs
+export default SearchJobs;

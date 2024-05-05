@@ -5,6 +5,7 @@ Weekday Assignment
 2. npm install
 3. npm run dev
 
+Day 1:![Day 1](https://github.com/NandaNxD/WeekDay/assets/65838540/23b8b73b-650a-4ac0-923a-89e136cacf19)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

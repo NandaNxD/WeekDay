@@ -18,7 +18,7 @@ export const apiSlice=createApi({
         // Always merge incoming data to the cache entry
         merge: (currentCache, newItems) => {
             if(currentCache.jdList.length>200){
-                currentCache.jdList.splice(0,1)
+                currentCache.jdList.splice(0,10)
             }
             currentCache.jdList=[...currentCache.jdList,...newItems.jdList];
         },

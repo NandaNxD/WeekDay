@@ -4,7 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
 
 export default function SearchFilterComponent({label,multiple=false,options,groupByKey,key,width}) {
-  const [value, setValue] = useState(multiple?[]:'');
+  const [value, setValue] = useState(multiple?[]:' ');
   
   return (
     <Autocomplete

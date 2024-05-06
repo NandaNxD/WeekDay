@@ -3,7 +3,7 @@ import { useGetAllJobsQuery } from "../../../store/api/apiSlice";
 import JobCard from "./JobCard/JobCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import "./JobCardsContainer.css";
-import Shimmer from "../../../utls/Shimmer";
+import Shimmer from "../../../utls/CardShimmer";
 
 const JobCardsContainer = () => {
 
@@ -13,10 +13,6 @@ const JobCardsContainer = () => {
   });
 
   const { data, isError, isLoading } = useGetAllJobsQuery(body);
-
-  useEffect(()=>{
-    console.log(data);
-  },[data])
 
 
   if (isLoading) {
@@ -28,7 +24,6 @@ const JobCardsContainer = () => {
   }
 
   const fetchMore=()=>{
-    console.log('fetching more')
     setBody({items:(body.items),offset:(body.offset+10)});
 
   }

@@ -11,7 +11,7 @@ export default function FilterShimmer() {
    */
 
   return (
-    <div style={{width:'100%',display:'flex',flexWrap:'wrap',gap:'3rem',rowGap:'100px',margin:'1rem 0',justifyContent:'space-between'}}>
+    <div style={{width:'100%',display:'flex',flexWrap:'wrap',gap:'3rem',margin:'1rem 0',justifyContent:'center'}}>
       
       {shimmerList.map((value,index) => {
         return (

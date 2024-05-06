@@ -9,7 +9,7 @@ export default function SearchFilterComponent({label,multiple=false,options,grou
   return (
     <Autocomplete
       multiple={multiple}
-      value={value}
+      
 
       id="clear-on-escape"
 

@@ -14,6 +14,9 @@ const JobCardsContainer = () => {
 
   const { data, isError, isLoading } = useGetAllJobsQuery(body);
 
+  useEffect(()=>{
+  },[data,document])
+
 
   if (isLoading) {
     return <Shimmer/>;
@@ -25,7 +28,6 @@ const JobCardsContainer = () => {
 
   const fetchMore=()=>{
     setBody({items:(body.items),offset:(body.offset+10)});
-
   }
 
   const jdList = data.jdList;

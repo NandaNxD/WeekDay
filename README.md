@@ -1,7 +1,7 @@
 # React + Vite
 Weekday Assignment
 
-TechStack: React, Redux, RTK Query, react-infinite-scroll-component
+TechStack: Vite, React, Redux, RTK Query, react-infinite-scroll-component
 
 Live-:https://singular-brioche-940fad.netlify.app/
 

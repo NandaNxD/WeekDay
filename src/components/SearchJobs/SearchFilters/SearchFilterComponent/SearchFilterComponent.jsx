@@ -2,33 +2,27 @@ import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../../../store/appSlice';
 
-export default function SearchFilterComponent({label,multiple=false,options,groupByKey,key,width}) {
-  const [value, setValue] = useState(multiple?[]:' ');
-  
+export default function SearchFilterComponent({label,multiple=false,options,onChangeFn}) {
+  const dispatch=useDispatch();
+
   return (
     <Autocomplete
       multiple={multiple}
       
-
       id="clear-on-escape"
 
       groupBy={(option) => option.groupByKey}
 
       onChange={(event, newValue) => {
-        if(multiple){
-          setValue([
-            ...newValue,
-          ]);
-        }
-        else{
-          setValue(newValue)
-        }
+        dispatch(setFilter({type:label,filterData:newValue}));
       }}
 
       options={options}
 
-      getOptionLabel={(option) => option}
+      getOptionLabel={(option) => String(option)}
 
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => (

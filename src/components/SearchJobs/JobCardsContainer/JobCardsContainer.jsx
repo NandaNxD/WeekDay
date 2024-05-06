@@ -13,6 +13,7 @@ const JobCardsContainer = () => {
   });
 
   const { data, isError, isLoading } = useGetAllJobsQuery(body);
+  const [hasMore, setHasMore] = useState(true);
   const [filteredJdList, setFilteredJdList] = useState([]);
 
   const filters = useSelector((store) => store.appSlice.filters);
@@ -67,10 +68,14 @@ const JobCardsContainer = () => {
     if (filters.searchFilter) {
       tempFilteredList = isFiltered
         ? tempFilteredList.filter((jd) => {
-            return jd?.companyName.toLowerCase().includes(filters.searchFilter.toLowerCase());
+            return jd?.companyName
+              .toLowerCase()
+              .includes(filters.searchFilter.toLowerCase());
           })
         : data.jdList.filter((jd) => {
-            return jd?.companyName.toLowerCase().includes(filters.searchFilter.toLowerCase());
+            return jd?.companyName
+              .toLowerCase()
+              .includes(filters.searchFilter.toLowerCase());
           });
       isFiltered = true;
     }
@@ -81,6 +86,12 @@ const JobCardsContainer = () => {
       // No filters added
       setFilteredJdList(data.jdList);
     } else {
+      if (tempFilteredList.length === 0) {
+        setHasMore(false);
+      } else {
+        setHasMore(true);
+      }
+
       setFilteredJdList(tempFilteredList);
     }
   };
@@ -102,11 +113,11 @@ const JobCardsContainer = () => {
       <InfiniteScroll
         dataLength={filteredJdList.length}
         next={fetchMore}
-        hasMore={true}
+        hasMore={hasMore}
         loader={<Shimmer></Shimmer>}
         endMessage={
           <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
+            <b>No more results</b>
           </p>
         }
       >
